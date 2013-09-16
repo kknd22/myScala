@@ -8,7 +8,7 @@ package reverlinkedlist
  * To change this template use File | Settings | File Templates.
  */
 
-abstract class AbstractLinkedList() {}
+//abstract class AbstractLinkedList() {}
 case class LinkedList(val head:Int, val tail:LinkedList) {
 
   override def toString():String = {
