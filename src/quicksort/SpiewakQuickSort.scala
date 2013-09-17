@@ -16,6 +16,7 @@ object SpiewakQuickSort extends App{
       if (ls.size <= 1) ls ::: parent else {
         val pivot = ls.head
 
+/*
         val (less, equal, greater) = ls.foldLeft(List[A](), List[A](), List[A]()) {
           case ((less, equal, greater), e) => {
             if (e < pivot)
@@ -26,8 +27,21 @@ object SpiewakQuickSort extends App{
               (less, equal, e :: greater)
           }
         }
+*/
+        val z = (List[A](), List[A](), List[A]())
 
-        sort(less)(equal ::: sort(greater)(parent))
+        val r = ls.foldLeft(List[A](), List[A](), List[A]()) {
+          (z, e) => {
+            if (e < pivot)
+              (e :: z._1, z._2, z._3)
+            else if (e == pivot)
+              (z._1, e :: z._2, z._3)
+            else
+              (z._1, z._2, e :: z._3)
+          }
+        }
+
+        sort(r._1)(r._2 ::: sort(r._3)(parent))
       }
     }
     sort(ls)(Nil)
