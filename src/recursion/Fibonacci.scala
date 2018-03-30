@@ -41,4 +41,20 @@ object Fibonacci {
       }
 
   */
+  
+
+/***************************************************************
+private def fibonacci(n:Int):Int={
+  
+  @scala.annotation.tailrec
+  def fibonacciTCO(n:Int,accu:Int):Int= n match {
+      case 1 => return 0
+      case 2 => return 1
+      case 3 => return 1
+      case _ => fibonacciTCO(n-1,n+accu)
+  }
+  fibonacciTCO(n,0)
+}
+
+*/
 }
