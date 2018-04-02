@@ -28,6 +28,6 @@ class QSortPureFunctional {
 object TestQSortPureFunctional extends App {
    var list = Array( 22 ,20, 21, 10, 3, 8, 2, 1, 9, 5, 6)
    val qs = new QSortPureFunctional()
-   qs.qsort(list)
-   println("finally: " + list.mkString(", "))
+   val sorted = qs.qsort(list)
+   println("finally: " + sorted.mkString(", "))
 }
