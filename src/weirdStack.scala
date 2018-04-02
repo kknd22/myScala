@@ -5,12 +5,12 @@ class Stack[+A] {
     override def toString() = elem.toString() + " " +
                               Stack.this.toString()
   }
-  def top: A = error("no element on stack")
-  def pop: Stack[A] = error("no element on stack")
+  def top: A = throw new RuntimeException("no element on stack")
+  def pop: Stack[A] = throw new RuntimeException("no element on stack")
   override def toString() = ""
 }
 
-object VariancesTest extends Application {
+object VariancesTest extends App {
   var s: Stack[Any] = new Stack().push("hello");
   s = s.push(new Object())
   s = s.push(7)
